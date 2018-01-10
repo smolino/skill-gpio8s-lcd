@@ -1,11 +1,12 @@
-# picroft 8 Switch Relay skill gpio Readme 
+# picroft 8 Switch Relay skill gpio and LCD Readme 
 
-This is a skill for picroft that will interact with the GPIO and 8 Swich Relay
+This is a skill for picroft that will interact with the GPIO and 8 Swich Relay + LCD
 
 ## Requirements
 
 This requires a Picroft install on the RPi you can find instructions on the home.mycroft.ai site.
 Be sure that mycroft user has the following the group for gpio
+An LCD1602
 
 ### Requires
 
@@ -33,11 +34,11 @@ You can then find the generated html in ```docs/build/html/index.html```.  Open 
 ## Installing
 First method
 
-msm install https://github.com/smolino/picroft_skill_gpio8s.git
+msm install https://github.com/smolino/skill-gpio8s-lcd.git
 
 Second method
 
-Once you have a picroft image configure it for SSH access.  Change the Makefile ip address for the RPi you installed the image onto. Also create the folder ```/opt/mycroft/skills/skill-gpio8s``` on the RPi for the installer.
+Once you have a picroft image configure it for SSH access.  Change the Makefile ip address for the RPi you installed the image onto. Also create the folder ```/opt/mycroft/skills/skill-gpio8s-lcd``` on the RPi for the installer.
 
 ```make install.pi```
 
@@ -72,16 +73,17 @@ Turn Bedroom On
 Turn Bedroom Off
 ```
 
-And Picroft do not respond
+And Picroft do not respond 
+LCD shows status
 
 Remember to add mycroft user to gpio group:
 
 sudo usermod -g gpio mycroft
-
+sudo chown mycroft i2c-1
 sudo apt-get install rpi.gpio
 
 sudo pip install GPIO
-
+sudo pip install smbus2
 
 ## Files
 
