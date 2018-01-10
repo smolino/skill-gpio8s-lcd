@@ -3,9 +3,9 @@
 This is intented to mock up an interface into the RPi GPIO until hardware
 is accquired
 """
-
 import json
 import threading
+import LCD1602
 import time
 
 try:
@@ -322,4 +322,10 @@ if __name__=="__main__":
     blink_active = False
     if pi_interface:
         print("GPIO is valid")
+
+    def setup():
+        LCD1602.init(0x27, 1)   # init(slave address, background light)
+        LCD1602.write(0, 0, 'Hello')
+        LCD1602.write(1, 1, 'from SunFounder')
+        time.sleep(2)
 
