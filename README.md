@@ -83,6 +83,7 @@ sudo chown mycroft i2c-1
 sudo apt-get install rpi.gpio
 
 sudo pip install GPIO
+
 sudo pip install smbus2
 
 ## Files
