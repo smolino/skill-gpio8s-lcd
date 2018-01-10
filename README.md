@@ -79,7 +79,9 @@ LCD shows status
 Remember to add mycroft user to gpio group:
 
 sudo usermod -g gpio mycroft
+
 sudo chown mycroft i2c-1
+
 sudo apt-get install rpi.gpio
 
 sudo pip install GPIO
